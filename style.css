@@ -1,0 +1,44 @@
+* {
+  padding: 0;
+  margin: 0;
+  vertical-align: baseline;
+  list-style: none;
+  border: 0;
+}
+
+body {
+  margin: 5%;
+}
+
+#color-palette {
+  margin: 3%;
+}
+
+.color {
+  height: 25px;
+  width: 10%;
+  display: inline-block;
+  border: solid black 1px;
+
+}
+
+.color:nth-child( 1 ) {
+  background-color: black;
+}
+
+.color:nth-child( 2 ) {
+  background-color: red;
+}
+
+.color:nth-child( 3 ) {
+  background-color: blue;
+}
+
+.color:nth-child( 4 ) {
+  background-color: orange;
+}
+
+.color:nth-child( 5 ) {
+  background-color: purple;
+}
+
