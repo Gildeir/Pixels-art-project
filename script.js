@@ -1,12 +1,4 @@
 console.log('l');
-function changeColor() {
-  const pixel = event.target;
-  for (let checker = 0; checker < document.getElementsByClassName('color').length; checker += 1) {
-    for (let searcher = 0; searcher < document.getElementsByClassName('color').length; searcher += 1) {
-      if ((document.getElementsByClassName('color')[checker].classList[searcher] === 'select')) pixel.style.backgroundColor = document.getElementsByClassName('color')[checker].classList[searcher];
-    }
-  }
-}//changeColor()
 
 function createPixelBoard() {
   const numbersRows = 5;
@@ -17,14 +9,15 @@ function createPixelBoard() {
     for (let indexR = 0; indexR < numbersRows; indexR += 1) {
       const newDiv = document.createElement('div');
       newDiv.className = 'pixel';
-      //pixel.addEventListener('click', changeColor);
       document.getElementsByClassName('row')[indexL].appendChild(newDiv);
     }
   }
 } createPixelBoard();
 
-const setPixel = document.querySelector('.pixel');
-function setBlackColor() {
-  setPixel.style.backgroundColor = 'black';
+const arrPixel = document.querySelectorAll('.pixel');
+const setColor = ['black', 'red', 'green', 'blue'];
+for (let index = 0; index < document.querySelectorAll('.pixel').length; index += 1) {
+  document.querySelectorAll('.pixel').style.backgroundColor[index] = setColor[index];
 }
-setPixel.addEventListener('click', setBlackColor);
+setColor[0].classList.add('selected');
+sessionStorage.setItem('setColor',setColor[0].style.backgroundColor);

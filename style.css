@@ -51,6 +51,9 @@ body {
 
 }
 
+.selected {
+  background-color: black;
+}
 
 
 .pixel {
