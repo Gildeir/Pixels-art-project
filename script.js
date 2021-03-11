@@ -14,18 +14,20 @@ function createPixelBoard() {
   }
 } createPixelBoard();
 
-const arrPixel = document.querySelectorAll('.pixel');
-const setColor = ['black', 'red', 'green', 'blue'];
-for (let index = 0; index < setColor.length; index += 1) {
-  arrPixel[index].style.backgroundColor[index] = setColor[index];
+const pixel = document.querySelectorAll('.pixel');
+for (let indexA = 0; indexA < document.querySelectorAll('.color').length; indexA += 1) {
+  const color = ['black', 'purple', 'green', 'blue'];
+  document.querySelectorAll('.color')[indexA].style.backgroundColor = color[indexA];
 }
-setColor[0].classList.add('selected');
-sessionStorage.setItem('setColor', setColor[0].style.backgroundColor);
-for (let indexB = 0; indexB < setColor.length; indexB += 1) {
-  document.querySelectorAll('.color')[indexB].addEventListener('click', () => {
+
+document.querySelectorAll('.color')[0].classList.add('selected');
+sessionStorage.setItem('color', document.querySelectorAll('.color')[0].style.backgroundColor);
+
+for (let indexR = 0; indexR < document.querySelectorAll('.color').length; indexR += 1) {
+  document.querySelectorAll('.color')[indexR].addEventListener('click', () => {
     document.querySelector('.selected').classList.remove('selected');
-    document.querySelectorAll('.color')[indexB].classList.add('selected');
-    sessionStorage.setItem('color', document.querySelectorAll('.color')[indexB].style.backgroundColor);
+    document.querySelectorAll('.color')[indexR].classList.add('selected');
+    sessionStorage.setItem('color', document.querySelectorAll('.color')[indexR].style.backgroundColor);
   });
 }
 
