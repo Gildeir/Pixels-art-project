@@ -36,3 +36,10 @@ for (let index = 0; index < document.querySelectorAll('.pixel').length; index +=
     pixel[index].style.backgroundColor = sessionStorage.color;
   });
 }
+
+document.getElementById('clear-board').addEventListener('click', () => {
+  const pixelBoard = document.getElementsByClassName('pixel');
+  for (let index = 0; index < pixelBoard.length; index += 1) {
+    pixelBoard[index].style.backgroundColor = 'white';
+  }
+});
