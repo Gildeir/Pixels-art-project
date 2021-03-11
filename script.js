@@ -24,10 +24,11 @@ document.querySelectorAll('.color')[0].classList.add('selected');
 sessionStorage.setItem('color', document.querySelectorAll('.color')[0].style.backgroundColor);
 
 for (let indexR = 0; indexR < document.querySelectorAll('.color').length; indexR += 1) {
+  const arrColor = document.querySelectorAll('.color');
   document.querySelectorAll('.color')[indexR].addEventListener('click', () => {
     document.querySelector('.selected').classList.remove('selected');
     document.querySelectorAll('.color')[indexR].classList.add('selected');
-    sessionStorage.setItem('color', document.querySelectorAll('.color')[indexR].style.backgroundColor);
+    sessionStorage.setItem('color', arrColor[indexR].style.backgroundColor);
   });
 }
 
