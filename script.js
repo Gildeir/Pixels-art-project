@@ -44,3 +44,4 @@ document.getElementById('clear-board').addEventListener('click', () => {
     pixelBoard[index].style.backgroundColor = 'white';
   }
 });
+
